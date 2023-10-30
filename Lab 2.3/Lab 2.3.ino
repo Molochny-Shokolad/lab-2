@@ -12,7 +12,11 @@ void newMsg(FB_msg& msg) {
     if(msg.text == "Hello") {
         String otp = "Привет!";
         bot.sendMessage(otp, msg.chatID);
-        otp = "На сообщение отправить == "+otp;
+        Serial.println(tem+otp);
+    }
+    else {
+        String otp = "Я тебя не понял";
+        bot.sendMessage(otp, msg.chatID);
         Serial.println(tem+otp);
     }
     Serial.println(tem);
