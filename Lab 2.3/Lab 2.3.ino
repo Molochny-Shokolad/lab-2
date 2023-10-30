@@ -12,6 +12,7 @@ void newMsg(FB_msg& msg) {
     if(msg.text == "Hello") {
         String otp = "Привет!";
         bot.sendMessage(otp, msg.chatID);
+        otp = "На сообщение отправить == "+otp;
         Serial.println(tem+otp);
     }
     Serial.println(tem);
@@ -30,15 +31,4 @@ void connectWiFi() {
         if (millis() > 15000) ESP.restart();
     }
     Serial.println("Connected");
-}
-// В данном коде изменилась функция "void newMsg(FB_msg& msg)":
-void newMsg(FB_msg& msg) {
-    String tem = "("+msg.chatID+", "+msg.username+", "+msg.text+")";
-    if(msg.text == "Hello") {
-        String otp = "Привет!";
-        bot.sendMessage(otp, msg.chatID);
-        otp = "На сообщение отправить == "+otp;
-        Serial.println(tem+otp);
-    }
-    Serial.println(tem);
 }
